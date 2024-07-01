@@ -1,3 +1,5 @@
+let getedResult = false;
+
 const display = document.querySelector('#display');
 const buttons = document.querySelectorAll('input[type=button]');
 
@@ -13,7 +15,11 @@ buttons.forEach((myButton) => {
         } else if (myButton.value == '=' && display.value == '') {
             alert('Escreva um valor!');
         } else if (myButton.value == '=') {
-            display.value = eval(display.value);
+            getedResult = true;
+        } if (myButton.value != '=' && getedResult == true && display.value != '') {
+            display.value = myButton.value;
+            getedResult = false;
+            
         } else {
             display.value += myButton.value;
         }
