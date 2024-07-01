@@ -11,7 +11,7 @@ buttons.forEach((myButton) => {
             let myValue = display.value;
             display.value = myValue.toString().slice(0, -1);
         } else if (myButton.value == '=' && display.value == '') {
-            alert('Escreve ai um valor meu parca!');
+            alert('Escreva um valor!');
         } else if (myButton.value == '=') {
             display.value = eval(display.value);
         } else {
