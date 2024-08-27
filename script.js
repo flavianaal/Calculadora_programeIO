@@ -15,11 +15,15 @@ buttons.forEach((myButton) => {
         } else if (myButton.value == '=' && display.value == '') {
             alert('Escreva um valor!');
         } else if (myButton.value == '=') {
+            try {
+                display.value = eval(display.value); // Calcula a expressão no display
+            } catch (error) {
+                alert('Erro na expressão');
+            }
             getedResult = true;
-        } if (myButton.value != '=' && getedResult == true && display.value != '') {
+        } else if (myButton.value != '=' && getedResult == true && display.value != '') {
             display.value = myButton.value;
             getedResult = false;
-            
         } else {
             display.value += myButton.value;
         }
